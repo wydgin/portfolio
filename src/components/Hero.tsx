@@ -27,7 +27,10 @@ export function Hero() {
             I MAKE
             <br />
             <span className="inline-block">
-              <span className="text-accent-flow">STUFF</span> :)
+              <span className="text-flow-word" data-text="STUFF">
+                <span className="text-flow-fill">STUFF</span>
+              </span>{" "}
+              :)
             </span>
           </motion.h1>
         </div>

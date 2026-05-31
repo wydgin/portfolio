@@ -1,5 +1,6 @@
 export const siteConfig = {
-  name: "Regina Galfo",
+  name: "rspace",
+  fullName: "Regina Galfo",
   title: "Full Stack Developer · Graphic Designer · Aspiring AI Engineer",
   email: "reginagalfo.work@gmail.com",
   location: "Quezon City, Philippines",

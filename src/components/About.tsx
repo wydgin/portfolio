@@ -50,7 +50,7 @@ export function About() {
               transition={{ duration: 0.5, delay: 0.15 }}
             >
               <h2 className="font-display text-4xl font-bold tracking-tight md:text-5xl">
-                {siteConfig.name}
+                {siteConfig.fullName}
                 <span className="text-accent">.</span>
               </h2>
               <p className="mt-2 text-sm uppercase tracking-[0.15em] text-muted">
