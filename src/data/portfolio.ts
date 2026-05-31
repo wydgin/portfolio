@@ -1,11 +1,10 @@
 export const siteConfig = {
-  name: "rspace",
-  fullName: "Regina Galfo",
+  name: "Regina Galfo",
   title: "Full Stack Developer · Graphic Designer · AI Engineer",
   email: "reginagalfo.work@gmail.com",
   location: "Quezon City, Philippines",
   focus: "AI & Social Impact",
-  availability: "Available for\nFreelance",
+  designFocus: "Graphic Design",
   subtitle: "BS Computer Engineering · UP Diliman",
   bio: "Computer Engineering student at UP Diliman with interests in full-stack development, AI, and graphic design. I'm an affiliate at the Smart Systems Laboratory, working on assistive medical imaging and explainable AI, and I also take on freelance branding — from hackathon builds to logos and event collaterals.",
   heroDescription:
@@ -24,15 +23,18 @@ export const navLinks = [
 export const expertise = [
   {
     title: "Full Stack Development",
-    description: "Web & mobile apps, REST APIs, and cloud deployment with React, FastAPI, and Docker",
+    description:
+      "Web & mobile apps, REST APIs, and cloud deployment with React, FastAPI, and Docker",
   },
   {
     title: "Graphic Design & Branding",
-    description: "UI/UX, creative direction, and visual identity — logos, packaging, and social media kits",
+    description:
+      "UI/UX, creative direction, and visual identity — logos, packaging, and social media kits",
   },
   {
     title: "AI & Smart Systems",
-    description: "Explainable AI, computer vision, and assistive systems for real-world impact",
+    description:
+      "Explainable AI, computer vision, and assistive systems for real-world impact",
   },
 ];
 
@@ -58,79 +60,138 @@ export const techStack = {
   ],
 };
 
+export type ProjectCategory = "tech" | "creatives";
+
 export type Project = {
   id: string;
   title: string;
+  caption: string;
   description: string;
+  date: string;
   tags: string[];
   href?: string;
   featured?: boolean;
   image?: string;
+  aspect?: "portrait" | "landscape" | "square";
 };
 
 export const techProjects: Project[] = [
   {
-    id: "t01",
+    id: "revolt",
     title: "REvolt",
+    caption: "Smarter EV ecosystem — MERALCO IDOL Hackathon Champion.",
     description:
       "Champion solution at MERALCO IDOL Hackathon 2025 — a smarter EV ecosystem with intelligent routing and charging infrastructure. 1st place out of 11 teams.",
-    tags: ["Featured", "AI", "Hackathon"],
+    date: "2025",
+    tags: ["AI", "Hackathon"],
     featured: true,
+    aspect: "landscape",
   },
   {
-    id: "t02",
+    id: "buklod",
     title: "Project Buklod",
+    caption: "Citizen app with data reconciliation for decentralized LGU databases.",
     description:
       "Centralized citizen application backed by a Dynamic Data Reconciliation engine for decentralized LGU databases, with an IoT warning system.",
+    date: "2026",
     tags: ["Full Stack", "Social Impact"],
+    aspect: "portrait",
   },
   {
-    id: "t03",
+    id: "gresbak",
     title: "GResbak",
+    caption: "Emergency fund feature for gig workers — GCash ImaGnation.",
     description:
       "Emergency fund-building feature for gig workers — built for the GCash ImaGnation Innovation Challenge to create a financial safety net.",
+    date: "2025",
     tags: ["Fintech", "Mobile"],
+    aspect: "square",
   },
 ];
 
 export const designProjects: Project[] = [
   {
-    id: "d01",
+    id: "paw-unleashed",
     title: "Paw Unleashed Rebrand",
+    caption: "Full rebrand and UI/UX for an Australian pet brand.",
     description:
       "Led the full rebrand for an Australian pet brand — UI/UX, visual identity, and automated content systems that improved engagement and sales conversion.",
-    tags: ["Featured", "Branding", "UI/UX"],
+    date: "2020 – 2021",
+    tags: ["Branding", "UI/UX"],
     featured: true,
+    aspect: "portrait",
   },
   {
-    id: "d02",
+    id: "up-capes",
     title: "UP CAPES Job Fair 2026",
+    caption: "Branding and publications for UP CAPES' flagship job fair.",
     description:
       "Team Lead for branding and publications on UP CAPES' biggest flagship event — visual identity, collaterals, and event materials for engineering students.",
+    date: "2026",
     tags: ["Branding", "Publications"],
+    aspect: "landscape",
   },
   {
-    id: "d03",
+    id: "freelance-branding",
     title: "Freelance Brand Identity",
+    caption: "Logos, packaging, and social kits for small businesses.",
     description:
       "Creative direction and branding for small businesses — logos, packaging design, and social media kits that translate brand identity into visual assets.",
+    date: "2024 – present",
     tags: ["Branding", "Freelance"],
+    aspect: "square",
   },
 ];
 
-export const projectSections = [
+export type ProjectSection = {
+  id: ProjectCategory;
+  category: ProjectCategory;
+  title: string;
+  exploreHref: string;
+  projects: Project[];
+};
+
+export const projectSections: ProjectSection[] = [
   {
     id: "tech",
-    label: "Section 02 // Tech Projects",
+    category: "tech",
     title: "Tech Projects",
+    exploreHref: "/projects/tech",
     projects: techProjects,
-    variant: "tech" as const,
   },
   {
-    id: "design",
-    label: "Section 03 // Graphic Design",
+    id: "creatives",
+    category: "creatives",
     title: "Graphic Design",
+    exploreHref: "/projects/creatives",
     projects: designProjects,
-    variant: "design" as const,
   },
 ];
+
+export function getFeaturedProject(projects: Project[]) {
+  return projects.find((project) => project.featured) ?? projects[0];
+}
+
+export function getProjectById(category: ProjectCategory, id: string) {
+  const projects =
+    category === "tech" ? techProjects : designProjects;
+  return projects.find((project) => project.id === id);
+}
+
+export function getProjectDetailPath(category: ProjectCategory, id: string) {
+  return `/projects/${category}/${id}`;
+}
+
+export const projectCategoryMeta: Record<
+  ProjectCategory,
+  { title: string; description: string }
+> = {
+  tech: {
+    title: "Tech Projects",
+    description: "Software, AI systems, and hackathon builds.",
+  },
+  creatives: {
+    title: "Creatives",
+    description: "Branding, UI/UX, and visual design work.",
+  },
+};

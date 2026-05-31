@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Sparkles } from "lucide-react";
+import { MapPin, Palette, Sparkles } from "lucide-react";
 import { expertise, siteConfig, techStack } from "@/data/portfolio";
 
 const fadeUp = {
@@ -50,7 +50,7 @@ export function About() {
               transition={{ duration: 0.5, delay: 0.15 }}
             >
               <h2 className="font-display text-4xl font-bold tracking-tight md:text-5xl">
-                {siteConfig.fullName}
+                {siteConfig.name}
                 <span className="text-accent">.</span>
               </h2>
               <p className="mt-2 text-sm uppercase tracking-[0.15em] text-muted">
@@ -85,13 +85,9 @@ export function About() {
                 <Sparkles className="h-3.5 w-3.5" />
                 {siteConfig.focus}
               </div>
-              <div className="rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm text-accent">
-                {siteConfig.availability.split("\n").map((line, i) => (
-                  <span key={line}>
-                    {i > 0 && <br />}
-                    {line}
-                  </span>
-                ))}
+              <div className="flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted">
+                <Palette className="h-3.5 w-3.5" />
+                {siteConfig.designFocus}
               </div>
             </motion.div>
 

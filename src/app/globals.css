@@ -54,6 +54,42 @@ body {
   font-family: var(--font-syne), system-ui, sans-serif;
 }
 
+.explore-grid {
+  columns: 1;
+  column-gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .explore-grid {
+    columns: 2;
+    column-gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .explore-grid {
+    columns: 3;
+    column-gap: 1.5rem;
+  }
+}
+
+.explore-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .explore-item {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .explore-item {
+    margin-bottom: 1.5rem;
+  }
+}
+
 .text-light-flow {
   --flow-base: #555555;
   --flow-dim: #333333;
