@@ -90,18 +90,16 @@ body {
   }
 }
 
-.text-light-flow {
-  --flow-base: #555555;
-  --flow-dim: #333333;
-  --flow-bright: #ffffff;
+.text-accent-flow {
+  --flow-dim: #4338ca;
+  --flow-base: #6366f1;
+  --flow-bright: #a5b4fc;
   display: inline-block;
   background: linear-gradient(
     105deg,
     var(--flow-dim) 0%,
     var(--flow-base) 35%,
-    color-mix(in srgb, var(--flow-bright) 50%, var(--flow-base)) 46%,
     var(--flow-bright) 50%,
-    color-mix(in srgb, var(--flow-bright) 50%, var(--flow-base)) 54%,
     var(--flow-base) 65%,
     var(--flow-dim) 100%
   );
@@ -110,22 +108,22 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  animation: text-light-flow 4s linear infinite;
+  animation: text-accent-flow 4s linear infinite;
 }
 
-.dark .text-light-flow {
-  --flow-dim: #444444;
-  --flow-base: #666666;
-  --flow-bright: #ffffff;
+.dark .text-accent-flow {
+  --flow-dim: #4f46e5;
+  --flow-base: #818cf8;
+  --flow-bright: #c7d2fe;
 }
 
-:root:not(.dark) .text-light-flow {
-  --flow-dim: #aaaaaa;
-  --flow-base: #777777;
-  --flow-bright: #111111;
+:root:not(.dark) .text-accent-flow {
+  --flow-dim: #4338ca;
+  --flow-base: #6366f1;
+  --flow-bright: #a5b4fc;
 }
 
-@keyframes text-light-flow {
+@keyframes text-accent-flow {
   0% {
     background-position: 150% center;
   }

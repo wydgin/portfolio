@@ -1,14 +1,15 @@
 export const siteConfig = {
   name: "Regina Galfo",
-  title: "Full Stack Developer · Graphic Designer · AI Engineer",
+  title: "Full Stack Developer · Graphic Designer · Aspiring AI Engineer",
   email: "reginagalfo.work@gmail.com",
   location: "Quezon City, Philippines",
   focus: "AI & Social Impact",
   designFocus: "Graphic Design",
+  webFocus: "Web Development",
   subtitle: "BS Computer Engineering · UP Diliman",
   bio: "Computer Engineering student at UP Diliman with interests in full-stack development, AI, and graphic design. I'm an affiliate at the Smart Systems Laboratory, working on assistive medical imaging and explainable AI, and I also take on freelance branding — from hackathon builds to logos and event collaterals.",
   heroDescription:
-    "Exploring software, AI, and visual design — building in the lab, at hackathons, and through freelance work.",
+    "Exploring software, AI, and visual design — online and offline.",
   social: {
     github: "https://github.com/wydgin",
   },
@@ -56,6 +57,8 @@ export const techStack = {
     "Docker",
     "Figma",
     "Adobe CC",
+    "Canva",
+    "CapCut",
     "Vercel",
   ],
 };
@@ -77,6 +80,18 @@ export type Project = {
 
 export const techProjects: Project[] = [
   {
+    id: "chexit",
+    title: "Chexit",
+    caption: "AI-assisted TB screening platform.",
+    description:
+      "AI-assisted tuberculosis screening — helping streamline detection workflows with intelligent, accessible tooling.",
+    date: "2026",
+    tags: ["AI", "Health Tech"],
+    href: "https://www.chexit.app/",
+    featured: true,
+    aspect: "landscape",
+  },
+  {
     id: "revolt",
     title: "REvolt",
     caption: "Smarter EV ecosystem — MERALCO IDOL Hackathon Champion.",
@@ -85,7 +100,7 @@ export const techProjects: Project[] = [
     date: "2025",
     tags: ["AI", "Hackathon"],
     featured: true,
-    aspect: "landscape",
+    aspect: "portrait",
   },
   {
     id: "buklod",
@@ -111,6 +126,28 @@ export const techProjects: Project[] = [
 
 export const designProjects: Project[] = [
   {
+    id: "creative-one",
+    title: "Creative Project One",
+    caption: "Placeholder — swap in your project details.",
+    description:
+      "Add a short description for your design work here.",
+    date: "2026",
+    tags: ["Branding"],
+    featured: true,
+    aspect: "portrait",
+  },
+  {
+    id: "creative-two",
+    title: "Creative Project Two",
+    caption: "Placeholder — swap in your project details.",
+    description:
+      "Add a short description for your design work here.",
+    date: "2026",
+    tags: ["UI/UX"],
+    featured: true,
+    aspect: "landscape",
+  },
+  {
     id: "paw-unleashed",
     title: "Paw Unleashed Rebrand",
     caption: "Full rebrand and UI/UX for an Australian pet brand.",
@@ -118,8 +155,7 @@ export const designProjects: Project[] = [
       "Led the full rebrand for an Australian pet brand — UI/UX, visual identity, and automated content systems that improved engagement and sales conversion.",
     date: "2020 – 2021",
     tags: ["Branding", "UI/UX"],
-    featured: true,
-    aspect: "portrait",
+    aspect: "square",
   },
   {
     id: "up-capes",
@@ -148,6 +184,7 @@ export type ProjectSection = {
   category: ProjectCategory;
   title: string;
   exploreHref: string;
+  seeMoreLabel: string;
   projects: Project[];
 };
 
@@ -157,6 +194,7 @@ export const projectSections: ProjectSection[] = [
     category: "tech",
     title: "Tech Projects",
     exploreHref: "/projects/tech",
+    seeMoreLabel: "See more of my technical work",
     projects: techProjects,
   },
   {
@@ -164,12 +202,18 @@ export const projectSections: ProjectSection[] = [
     category: "creatives",
     title: "Graphic Design",
     exploreHref: "/projects/creatives",
+    seeMoreLabel: "See more of my creative pursuits",
     projects: designProjects,
   },
 ];
 
-export function getFeaturedProject(projects: Project[]) {
-  return projects.find((project) => project.featured) ?? projects[0];
+export function getFeaturedProjects(projects: Project[], limit = 2) {
+  const featured = projects.filter((project) => project.featured);
+  if (featured.length >= limit) {
+    return featured.slice(0, limit);
+  }
+  const rest = projects.filter((project) => !project.featured);
+  return [...featured, ...rest].slice(0, limit);
 }
 
 export function getProjectById(category: ProjectCategory, id: string) {

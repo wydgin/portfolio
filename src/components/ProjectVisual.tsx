@@ -17,13 +17,18 @@ export function ProjectVisual({
   category,
   className = "",
   priority = false,
+  variant = "explore",
 }: {
   project: Project;
   category: ProjectCategory;
   className?: string;
   priority?: boolean;
+  variant?: "featured" | "explore";
 }) {
-  const aspect = aspectClasses[project.aspect ?? "landscape"];
+  const aspect =
+    variant === "featured"
+      ? "aspect-[16/10]"
+      : aspectClasses[project.aspect ?? "landscape"];
 
   if (project.image) {
     return (

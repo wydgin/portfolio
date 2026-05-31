@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Palette, Sparkles } from "lucide-react";
+import { Code2, MapPin, Palette, Sparkles } from "lucide-react";
 import { expertise, siteConfig, techStack } from "@/data/portfolio";
 
 const fadeUp = {
@@ -88,6 +88,10 @@ export function About() {
               <div className="flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted">
                 <Palette className="h-3.5 w-3.5" />
                 {siteConfig.designFocus}
+              </div>
+              <div className="flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted">
+                <Code2 className="h-3.5 w-3.5" />
+                {siteConfig.webFocus}
               </div>
             </motion.div>
 

@@ -22,13 +22,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 48 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display text-[clamp(2.75rem,10vw,7rem)] font-bold leading-[0.95] tracking-tight text-foreground"
+            className="font-display text-[clamp(2.5rem,10vw,7rem)] font-bold leading-[0.95] tracking-tight text-foreground"
           >
-            BUILDING
+            I MAKE
             <br />
-            <span className="text-light-flow">DIGITAL</span>
-            <br />
-            IDEAS<span className="text-accent">.</span>
+            <span className="inline-block">
+              <span className="text-accent-flow">STUFF</span> :)
+            </span>
           </motion.h1>
         </div>
 
