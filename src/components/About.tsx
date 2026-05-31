@@ -50,7 +50,7 @@ export function About() {
               transition={{ duration: 0.5, delay: 0.15 }}
             >
               <h2 className="font-display text-4xl font-bold tracking-tight md:text-5xl">
-                {siteConfig.name}
+                {siteConfig.fullName}
                 <span className="text-accent">.</span>
               </h2>
               <p className="mt-2 text-sm uppercase tracking-[0.15em] text-muted">
@@ -66,8 +66,7 @@ export function About() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-8 space-y-4 text-base leading-relaxed text-muted md:text-lg"
             >
-              <p className="text-foreground">{siteConfig.bio.lead}</p>
-              <p>{siteConfig.bio.body}</p>
+              <p>{siteConfig.bio}</p>
             </motion.div>
 
             <motion.div

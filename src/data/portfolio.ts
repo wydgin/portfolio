@@ -1,19 +1,17 @@
 export const siteConfig = {
   name: "rspace",
+  fullName: "Regina Galfo",
   title: "Full Stack Developer · Graphic Designer · AI Engineer",
   email: "reginagalfo.work@gmail.com",
   location: "Quezon City, Philippines",
   focus: "AI & Social Impact",
   availability: "Available for\nFreelance",
   subtitle: "BS Computer Engineering · UP Diliman",
-  bio: {
-    lead: "I'm a developer who actually cares about design.",
-    body: "Computer Engineering student at UP Diliman and affiliate at the Smart Systems Laboratory, where I work on assistive medical imaging and explainable AI. I build products that are technically sound and visually considered — from hackathon-winning EV systems to branding for small businesses.",
-  },
+  bio: "Computer Engineering student at UP Diliman with interests in full-stack development, AI, and graphic design. I'm an affiliate at the Smart Systems Laboratory, working on assistive medical imaging and explainable AI, and I also take on freelance branding — from hackathon builds to logos and event collaterals.",
   heroDescription:
-    "Designer by eye, engineer by trade. Crafting digital products at the intersection of AI, full-stack development, and visual design.",
+    "Exploring software, AI, and visual design — building in the lab, at hackathons, and through freelance work.",
   social: {
-    github: "https://github.com/rspace",
+    github: "https://github.com/wydgin",
   },
 };
 
