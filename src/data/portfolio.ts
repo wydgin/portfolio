@@ -8,6 +8,7 @@ export const siteConfig = {
   designFocus: "Graphic Design",
   webFocus: "Web Development",
   subtitle: "BS Computer Engineering · UP Diliman",
+  profileImage: "/regina.JPG",
   bio: "Computer Engineering student at UP Diliman with interests in full-stack development, AI, and graphic design. I'm an affiliate at the Smart Systems Laboratory, working on assistive medical imaging and explainable AI, and I also take on freelance branding — from hackathon builds to logos and event collaterals.",
   heroDescription:
     "Exploring software, AI, and visual design — online and offline.",
@@ -74,8 +75,11 @@ export type Project = {
   date: string;
   tags: string[];
   href?: string;
+  hrefLabel?: string;
   featured?: boolean;
   image?: string;
+  gallery?: string[];
+  pdf?: string;
   aspect?: "portrait" | "landscape" | "square";
 };
 
@@ -89,7 +93,9 @@ export const techProjects: Project[] = [
     date: "2026",
     tags: ["AI", "Health Tech"],
     href: "https://www.chexit.app/",
+    hrefLabel: "Visit Chexit",
     featured: true,
+    image: "/projects/chexit.png",
     aspect: "landscape",
   },
   {
@@ -101,82 +107,137 @@ export const techProjects: Project[] = [
     date: "2025",
     tags: ["AI", "Hackathon"],
     featured: true,
-    aspect: "portrait",
+    image: "/projects/revolt1.png",
+    aspect: "landscape",
   },
   {
-    id: "buklod",
-    title: "Project Buklod",
-    caption: "Citizen app with data reconciliation for decentralized LGU databases.",
+    id: "family-tree",
+    title: "Family Tree",
+    caption: "Interactive family tree web app — DEMO 1 culminating project.",
     description:
-      "Centralized citizen application backed by a Dynamic Data Reconciliation engine for decentralized LGU databases, with an IoT warning system.",
-    date: "2026",
-    tags: ["Full Stack", "Social Impact"],
-    aspect: "portrait",
-  },
-  {
-    id: "gresbak",
-    title: "GResbak",
-    caption: "Emergency fund feature for gig workers — GCash ImaGnation.",
-    description:
-      "Emergency fund-building feature for gig workers — built for the GCash ImaGnation Innovation Challenge to create a financial safety net.",
+      "A culminating requirement for DEMO 1 — an interactive family tree built and deployed on the web.",
     date: "2025",
-    tags: ["Fintech", "Mobile"],
-    aspect: "square",
+    tags: ["Full Stack", "Web App"],
+    href: "https://family-tree-galfo.vercel.app/",
+    hrefLabel: "View live demo",
+    image: "/projects/familytree.png",
+    aspect: "landscape",
+  },
+  {
+    id: "skysentry",
+    title: "SkySentry",
+    caption: "CanSat AQI probe — EEE 192 hardware project.",
+    description:
+      "EEE 192 project — a relatively low-cost CanSat designed to map atmospheric data scaled with US AQI, built with teammates for HWX.",
+    date: "2025",
+    tags: ["IoT", "Hardware"],
+    href: "https://sites.google.com/view/skysentry-192hwx/home",
+    hrefLabel: "View project site",
+    image: "/projects/skysentry.png",
+    aspect: "landscape",
   },
 ];
 
 export const designProjects: Project[] = [
   {
-    id: "creative-one",
-    title: "Creative Project One",
-    caption: "Placeholder — swap in your project details.",
+    id: "ovcaa-oat-eot",
+    title: "OVCAA-OAT End of Term Report",
+    caption: "Document design and social assets for OVCAA-OAT, AY 2326.",
     description:
-      "Add a short description for your design work here.",
-    date: "2026",
-    tags: ["Branding"],
+      "End of term report design for the Office of the Vice Chancellor for Academic Affairs — Office for the Advancement of Teaching. Includes the full document layout and companion social media graphics.",
+    date: "AY 2326",
+    tags: ["Publications", "Canva"],
+    href: "https://canva.link/ovcaaoat-eot-2326",
+    hrefLabel: "View on Canva",
     featured: true,
+    image: "/projects/eotdoc-6.png",
+    gallery: [
+      "/projects/eotdoc-1.png",
+      "/projects/eotdoc-2.png",
+      "/projects/eotdoc-6.png",
+      "/projects/eotdoc-7.png",
+      "/projects/eot-2326-socmed-1.png",
+      "/projects/eot-2326-socmed-2.png",
+      "/projects/eot-2326-socmed-4.png",
+      "/projects/eot-2326-socmed-15.png",
+    ],
     aspect: "portrait",
   },
   {
-    id: "creative-two",
-    title: "Creative Project Two",
-    caption: "Placeholder — swap in your project details.",
+    id: "chexit-brochure",
+    title: "Chexit Brochure",
+    caption: "Print and digital brochure for Chexit.",
     description:
-      "Add a short description for your design work here.",
+      "Brochure design for Chexit — visual communication of the AI-assisted TB screening platform for print and digital distribution.",
     date: "2026",
-    tags: ["UI/UX"],
+    tags: ["Branding", "Print"],
     featured: true,
-    aspect: "landscape",
+    image: "/projects/chexitbrochure.png",
+    gallery: ["/projects/chexitbrochure.png", "/projects/chexitbrochure2.png"],
+    aspect: "portrait",
   },
   {
-    id: "paw-unleashed",
-    title: "Paw Unleashed Rebrand",
-    caption: "Full rebrand and UI/UX for an Australian pet brand.",
+    id: "capes-pubmats",
+    title: "CAPES PubMats S2 2025–2026",
+    caption: "Publications and collaterals for UP CAPES.",
     description:
-      "Led the full rebrand for an Australian pet brand — UI/UX, visual identity, and automated content systems that improved engagement and sales conversion.",
-    date: "2020 – 2021",
-    tags: ["Branding", "UI/UX"],
-    aspect: "square",
-  },
-  {
-    id: "up-capes",
-    title: "UP CAPES Job Fair 2026",
-    caption: "Branding and publications for UP CAPES' flagship job fair.",
-    description:
-      "Team Lead for branding and publications on UP CAPES' biggest flagship event — visual identity, collaterals, and event materials for engineering students.",
-    date: "2026",
+      "Branding and publication materials for UP CAPES — including event tarps, handbooks, and promotional graphics for Semester 2, AY 2025–2026.",
+    date: "2025 – 2026",
     tags: ["Branding", "Publications"],
+    image: "/projects/jf26.png",
+    gallery: [
+      "/projects/jf26.png",
+      "/projects/mixer.png",
+      "/projects/jftarp.png",
+      "/projects/career101handbook.png",
+    ],
     aspect: "landscape",
   },
   {
-    id: "freelance-branding",
-    title: "Freelance Brand Identity",
-    caption: "Logos, packaging, and social kits for small businesses.",
+    id: "eqdrill",
+    title: "Earthquake Safety Pubmat",
+    caption: "OVCAA earthquake safety tips infographic.",
     description:
-      "Creative direction and branding for small businesses — logos, packaging design, and social media kits that translate brand identity into visual assets.",
-    date: "2024 – present",
-    tags: ["Branding", "Freelance"],
-    aspect: "square",
+      "Publication material for the OVCAA office — an earthquake safety tips infographic covering before, during, and after an earthquake.",
+    date: "2025",
+    tags: ["Publications", "OVCAA"],
+    image: "/projects/eqdrill.png",
+    aspect: "portrait",
+  },
+  {
+    id: "rizal",
+    title: "Life and Works of Rizal",
+    caption: "PI 100 course requirement — visual study.",
+    description:
+      "PI 100 requirement on the Life and Works of José Rizal — a visual and research-driven project.",
+    date: "2025",
+    tags: ["Academic", "Design"],
+    image: "/projects/rizal.png",
+    aspect: "portrait",
+  },
+  {
+    id: "galfo-portfolio-capes",
+    title: "Galfo Portfolio — CAPES 2025",
+    caption: "Portfolio for CAPES application, AY 2025.",
+    description:
+      "Design portfolio submitted for the UP CAPES application in 2025 — a curated selection of creative and technical work.",
+    date: "2025",
+    tags: ["Portfolio", "CAPES"],
+    image: "/projects/galfoportfolio.png",
+    pdf: "/projects/Galfo_portfolio_2025.pdf",
+    aspect: "landscape",
+  },
+  {
+    id: "journal",
+    title: "Journal (Analog)",
+    caption: "Handmade analog journal spreads.",
+    description:
+      "Personal analog journal — handmade layouts and spreads exploring visual storytelling offline.",
+    date: "2025",
+    tags: ["Analog", "Personal"],
+    image: "/projects/journal.jpg",
+    gallery: ["/projects/journalspread1.PNG"],
+    aspect: "portrait",
   },
 ];
 

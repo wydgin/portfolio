@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Code2, MapPin, Palette, Sparkles } from "lucide-react";
 import { expertise, siteConfig, techStack } from "@/data/portfolio";
@@ -33,12 +34,14 @@ export function About() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="relative aspect-[4/5] w-full max-w-xs overflow-hidden rounded-2xl bg-surface"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-surface to-surface-hover" />
-            <div className="absolute inset-0 flex items-end p-6">
-              <span className="text-xs uppercase tracking-widest text-muted">
-                Add photo at /public/profile.jpg
-              </span>
-            </div>
+            <Image
+              src={siteConfig.profileImage}
+              alt={siteConfig.fullName}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 280px, 280px"
+              priority
+            />
           </motion.div>
 
           <div>

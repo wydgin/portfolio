@@ -28,7 +28,6 @@ function FeaturedProjectCard({
   index: number;
 }) {
   const detailHref = getProjectDetailPath(category, project.id);
-  const externalHref = project.href;
 
   const cardClassName =
     "group flex h-full min-h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-border-hover";
@@ -52,7 +51,7 @@ function FeaturedProjectCard({
           {project.description}
         </p>
         <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors group-hover:text-accent">
-          {externalHref ? "Visit site" : "View project"}
+          View project
           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </span>
       </div>
@@ -68,20 +67,9 @@ function FeaturedProjectCard({
       transition={{ duration: 0.5, delay: index * 0.08 }}
       className="h-full min-h-0"
     >
-      {externalHref ? (
-        <a
-          href={externalHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={cardClassName}
-        >
-          {cardContent}
-        </a>
-      ) : (
-        <Link href={detailHref} className={cardClassName}>
-          {cardContent}
-        </Link>
-      )}
+      <Link href={detailHref} className={cardClassName}>
+        {cardContent}
+      </Link>
     </motion.div>
   );
 }

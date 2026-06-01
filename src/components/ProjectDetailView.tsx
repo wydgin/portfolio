@@ -1,12 +1,13 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import {
   getProjectById,
   projectCategoryMeta,
   type ProjectCategory,
 } from "@/data/portfolio";
 import { ExploreHeader } from "@/components/ExploreHeader";
+import { ProjectDetailContent } from "@/components/ProjectDetailContent";
 import { ProjectVisual } from "@/components/ProjectVisual";
 
 export function ProjectDetailView({
@@ -63,17 +64,7 @@ export function ProjectDetailView({
             {project.description}
           </p>
 
-          {project.href && (
-            <a
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
-            >
-              View live project
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-          )}
+          <ProjectDetailContent project={project} />
 
           <div className="mt-12 border-t border-border pt-8">
             <Link
