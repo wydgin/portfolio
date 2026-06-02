@@ -199,7 +199,7 @@ export const designProjects: Project[] = [
     caption: "OVCAA earthquake safety tips infographic.",
     description:
       "Publication material for the OVCAA office — an earthquake safety tips infographic covering before, during, and after an earthquake.",
-    date: "2025",
+    date: "2026",
     tags: ["Publications", "OVCAA"],
     image: "/projects/eqdrill.png",
     aspect: "portrait",
@@ -210,7 +210,7 @@ export const designProjects: Project[] = [
     caption: "PI 100 course requirement — visual study.",
     description:
       "PI 100 requirement on the Life and Works of José Rizal — a visual and research-driven project.",
-    date: "2025",
+    date: "2026",
     tags: ["Academic", "Design"],
     image: "/projects/rizal.png",
     aspect: "portrait",
@@ -233,10 +233,22 @@ export const designProjects: Project[] = [
     caption: "Handmade analog journal spreads.",
     description:
       "Personal analog journal — handmade layouts and spreads exploring visual storytelling offline.",
-    date: "2025",
+    date: "2026",
     tags: ["Analog", "Personal"],
     image: "/projects/journal.jpg",
     gallery: ["/projects/journalspread1.PNG"],
+    aspect: "portrait",
+  },
+  {
+    id: "mini-watercolor-1",
+    title: "Oranges",
+    caption: "A quick watercolor sketch of oranges using my mini watercolor set.",
+    description:
+      "Testing out gouache with this portable watercolor set I bought on a whim. Works pretty well! Spent only 245 pesos on this; it already included a water-refillable brush, paint, acrylic palette, sketchpad, and a clip.",
+    date: "2026",
+    tags: ["Analog", "Personal", "Watercolor"],
+    image: "/projects/oranges.jpg",
+    gallery: ["/projects/watercolorset.JPG"],
     aspect: "portrait",
   },
 ];
