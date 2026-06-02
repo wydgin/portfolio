@@ -247,9 +247,9 @@ export const designProjects: Project[] = [
       "Testing out gouache with this portable watercolor set I bought on a whim. Works pretty well! Spent only 245 pesos on this; it already included a water-refillable brush, paint, acrylic palette, sketchpad, and a clip.",
     date: "2026",
     tags: ["Analog", "Personal", "Watercolor"],
-    image: "/projects/oranges.jpg",
+    image: "/projects/oranges.JPG",
     gallery: ["/projects/watercolorset.JPG"],
-    aspect: "portrait",
+    aspect: "landscape",
   },
 ];
 
